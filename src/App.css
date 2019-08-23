@@ -19,15 +19,13 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+img {
+  height: 200px;
+  width: auto; 
+  padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.products-form-container {
+  display: flex; 
+  justify-content: space-evenly;
 }
