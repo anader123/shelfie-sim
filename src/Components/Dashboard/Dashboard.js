@@ -16,15 +16,13 @@ export default class Dashboard extends Component {
         const { inventory } = this.props; 
         const mappedInventory = inventory.map((product, index) => {
             return(
-                <Product key={index} product={product} deleteProduct={this.deleteProduct} storeSelectedProduct={this.props.storeSelectedProduct}/> 
+                <Product key={index} product={product} deleteProduct={this.deleteProduct} storeSelectedProduct={this.props.storeSelectedProduct}
+                handleEditToggle={this.props.handleEditToggle}/> 
             )
         })
         return (
-            <div>
-                Dashboard
-                <div className='products-flex-div'>
+            <div className='products-flex-div'>
                     {mappedInventory}
-                </div>
             </div>
         )
     }

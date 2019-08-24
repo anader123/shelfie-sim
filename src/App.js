@@ -13,7 +13,8 @@ export default class App extends Component {
 
     this.state = {
       inventory: [], 
-      selectedProduct: {}
+      selectedProduct: {},
+      editingProduct: false 
     }
   };
 
@@ -21,11 +22,11 @@ export default class App extends Component {
     this.getInventory(); 
   };
 
-  storeSelectedProduct = (id) => {
-    const index = id - 1 
+  storeSelectedProduct = (product) => {
     this.setState({
-      selectedProduct: this.state.inventory[index]
+      selectedProduct: product
     })
+    this.handleEditToggle(); 
   }
 
   getInventory = () => {
@@ -37,13 +38,19 @@ export default class App extends Component {
     })
   };
 
+  handleEditToggle = () => {
+    this.setState({
+        editingProduct: true
+    })
+  };
+
   render() {
     return (
       <div className="App">
         <Header /> 
         <div className="products-form-container">
-          <Dashboard inventory={this.state.inventory} getInventory={this.getInventory} storeSelectedProduct={this.storeSelectedProduct}/> 
-          <Form getInventory={this.getInventory} selectedProduct={this.state.selectedProduct}/> 
+          <Dashboard inventory={this.state.inventory} getInventory={this.getInventory} storeSelectedProduct={this.storeSelectedProduct} handleEditToggle={this.handleEditToggle}/> 
+          <Form getInventory={this.getInventory} selectedProduct={this.state.selectedProduct} editingProduct={this.state.editingProduct}/> 
         </div>
       </div>
     )

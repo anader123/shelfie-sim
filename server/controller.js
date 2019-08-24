@@ -15,9 +15,18 @@ const getInventory = (request, response) => {
      })
  };
 
+ const updateProduct = (request, response ) => {
+    const db = request.app.get('db'); 
+    const { id } = request.params; 
+    const { name, price, img } = request.body; 
+    db.update_product([name, price, img, id])
+        .then(() => {
+            response.status(200).send(`Product ${id} has been updated`)
+        })
+ };
+
  const deleteProduct = (request, response) => {
      const db = request.app.get('db');
-     console.log(request.parms) 
      const { id } = request.params; 
      db.delete_product([id])
         .then(() =>{
@@ -29,5 +38,6 @@ const getInventory = (request, response) => {
 module.exports = {
     getInventory,
     createProduct,
+    updateProduct,
     deleteProduct 
 };

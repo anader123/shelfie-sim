@@ -27,6 +27,7 @@ massive(CONNECTION_STRING).then((dbInstance) => {
 // Endpoints 
 app.get('/api/inventory', ctrl.getInventory); 
 app.post('/api/product', ctrl.createProduct); 
+app.put('/api/products/:id', ctrl.updateProduct); 
 app.delete('/api/products/:id', ctrl.deleteProduct)
 
 app.listen(SEVER_PORT, () => console.log(`Server is running on ${SEVER_PORT}`));  

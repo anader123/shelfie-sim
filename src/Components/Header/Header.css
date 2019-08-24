@@ -1,0 +1,15 @@
+.header-container {
+    height: 10vh;
+    width: auto; 
+    background-color: #A2372A; 
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.shelfie-image {
+    height: 50px;
+    width: auto;
+    margin-left: 45px;
+    margin-right: 20px;
+}

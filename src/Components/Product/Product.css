@@ -1,0 +1,19 @@
+.product-container {
+    background: #913A2F;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    border-radius: 7px;
+}
+
+.info-container { 
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
