@@ -13,3 +13,13 @@
     margin-left: 45px;
     margin-right: 20px;
 }
+
+.nav-buttons { 
+    font-size: 18px;
+    margin-left: 30px;
+    background: rgb(117, 38, 28);
+    border-radius: 7px;
+    padding: 10px;
+    text-decoration: none;
+}
+

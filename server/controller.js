@@ -6,6 +6,15 @@ const getInventory = (request, response) => {
         });
  };
 
+ const getProduct = (request, response) => {
+     const db = request.app.get('db'); 
+     const { id } = request.params; 
+     db.get_product([id])
+        .then(product => {
+            response.status(200).send(product)
+        })
+ };
+
  const createProduct = (request, response) => {
      const db = request.app.get('db');
      const { name, price, img } = request.body; 
@@ -37,6 +46,7 @@ const getInventory = (request, response) => {
 
 module.exports = {
     getInventory,
+    getProduct,
     createProduct,
     updateProduct,
     deleteProduct 

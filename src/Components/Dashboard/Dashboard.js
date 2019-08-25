@@ -3,20 +3,39 @@ import Product from '../Product/Product';
 import axios from 'axios';
 
 export default class Dashboard extends Component {
+    constructor() {
+        super(); 
+        
+        this.state = {
+            inventory: [], 
+        }
+    }
 
+    componentDidMount() {
+        this.getInventory(); 
+      };
+      
+    getInventory = () => {
+        axios.get('/api/inventory')
+        .then(response => {
+          this.setState({
+            inventory: response.data 
+          })
+        })
+      };
+      
     deleteProduct = (id) => {
-        // const {id} = this.props.match.params;
         axios.delete(`/api/products/${id}`)
             .then(() => {
-                this.props.getInventory();
+                this.getInventory();
             })
             .catch(error => {console.log('Error in Dashboard:', error)})
     }
     render() {
-        const { inventory } = this.props; 
+        const { inventory } = this.state; 
         const mappedInventory = inventory.map((product, index) => {
             return(
-                <Product key={index} product={product} deleteProduct={this.deleteProduct} storeSelectedProduct={this.props.storeSelectedProduct}
+                <Product key={index} product={product} deleteProduct={this.deleteProduct} 
                 handleEditToggle={this.props.handleEditToggle}/> 
             )
         })

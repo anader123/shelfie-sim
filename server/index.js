@@ -26,6 +26,7 @@ massive(CONNECTION_STRING).then((dbInstance) => {
 
 // Endpoints 
 app.get('/api/inventory', ctrl.getInventory); 
+app.get('/api/product/:id', ctrl.getProduct)
 app.post('/api/product', ctrl.createProduct); 
 app.put('/api/products/:id', ctrl.updateProduct); 
 app.delete('/api/products/:id', ctrl.deleteProduct)
