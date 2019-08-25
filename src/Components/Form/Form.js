@@ -101,7 +101,7 @@ export default class Form extends Component {
         const { name, price, img } = this.state; 
         const { id } = this.props.match.params; 
         return (
-            <div>
+            <div className='form-flex-div'>
                 {!this.state.editingProduct
                 ?
                 (<div className='form-container'>

@@ -1,5 +1,11 @@
+.form-flex-div {
+    display: flex; 
+    justify-content: center; 
+}
+
 .form-container {
     background: #2C905C;
+    width: 30%;
     padding: 20px;
     margin: 40px;
     border-radius: 7px;
